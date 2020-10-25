@@ -13,7 +13,7 @@ body{
 
 .container{
     width: 600px;
-    min-height: 600px;
+    min-height: 500px;
     margin: 20px auto;
     border: 5px solid #CB1B45;
     border-radius: 5px;
@@ -75,4 +75,46 @@ body{
 
 .todoList .todo .delete:hover{
     cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 650px) {
+
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header{
+    padding: 5px;
+}
+
+.title{
+    font-size: 30px;
+    width: 100px;
+}
+
+.add{
+    flex: 1;
+}
+
+.add .txt{
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+}
+
+.main{
+    padding: 5px;
+}
+
+.todoList .todo .txt{
+    font-size: 24px;
+}
+
+.todoList .todo .delete{
+    font-size: 14px;
+}
+
 }
