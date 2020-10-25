@@ -69,7 +69,9 @@ body{
 
 .todoList .todo .delete{
     font-size: 20px;
-    border-left: 1px solid #CB1B45;
-    padding: 0 5px 0 10px;
-    line-height: 30px;
+    padding: 5px;
+}
+
+.todoList .todo .delete:hover{
+    cursor: pointer;
 }

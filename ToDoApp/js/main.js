@@ -13,6 +13,7 @@ add.addEventListener('submit',e => {
     const todo = add.querySelector('.txt').value.trim();
     if (todo.length) {
         newTodo(todo);
+        add.reset();
     }
 });
 
