@@ -1,0 +1,63 @@
+body,div,input,h1,h2,h3,form,ul,li,p,label{
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+body{
+    background: #FEDFE1;
+    color: #1C1C1C;
+}
+
+.container{
+    width: 600px;
+    min-height: 600px;
+    margin: 20px auto;
+    border: 5px solid #CB1B45;
+    border-radius: 5px;
+}
+
+.header{
+    padding: 10px;
+    border-bottom: 5px solid #CB1B45;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.add .txt{
+    width: 450px;
+    height: 40px;
+    border: 1px solid #CB1B45;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add .txt:focus{
+    outline: none;
+    border: 2px solid #CB1B45;
+}
+
+.main{
+    padding: 10px;
+}
+
+.todoList .item{
+    font-size: 30px;
+    padding: 5px;
+    background: rgba(203, 27, 69, 0.1);
+    border-top: 1px solid #CB1B45;
+}
+
+.todoList .item:first-child{
+    border: none;
+}
+
+.todoList .item:hover{
+    background: rgba(203, 27, 69, 0.3);
+}
