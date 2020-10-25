@@ -109,12 +109,4 @@ body{
     padding: 5px;
 }
 
-.todoList .todo .txt{
-    font-size: 24px;
-}
-
-.todoList .todo .delete{
-    font-size: 14px;
-}
-
 }
