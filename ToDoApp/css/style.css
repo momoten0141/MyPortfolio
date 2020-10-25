@@ -1,4 +1,4 @@
-body,div,input,h1,h2,h3,form,ul,li,p,label{
+body,div,input,h1,h2,h3,form,ul,li,p,label,i{
     box-sizing: border-box;
 }
 
@@ -47,17 +47,29 @@ body{
     padding: 10px;
 }
 
-.todoList .item{
-    font-size: 30px;
+.todoList .todo{
     padding: 5px;
     background: rgba(203, 27, 69, 0.1);
     border-top: 1px solid #CB1B45;
+    display: flex;
+    justify-content: space-between;
 }
 
-.todoList .item:first-child{
+.todoList .todo:first-child{
     border: none;
 }
 
-.todoList .item:hover{
+.todoList .todo:hover{
     background: rgba(203, 27, 69, 0.3);
+}
+
+.todoList .todo .txt{
+    font-size: 30px;
+}
+
+.todoList .todo .delete{
+    font-size: 20px;
+    border-left: 1px solid #CB1B45;
+    padding: 0 5px 0 10px;
+    line-height: 30px;
 }

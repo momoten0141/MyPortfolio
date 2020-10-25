@@ -3,9 +3,8 @@
 const add = document.querySelector('.add');
 const todoList = document.querySelector('.todoList');
 
-
 function newTodo(todo){
-    todoList.innerHTML += `<li class ="item">${todo}</li>`;
+    todoList.innerHTML += `<li class ="todo"><p class="txt">${todo}</p><i class="delete far fa-trash-alt"></i></li>`;
 }
 
 add.addEventListener('submit',e => {
@@ -15,4 +14,10 @@ add.addEventListener('submit',e => {
     if (todo.length) {
         newTodo(todo);
     }
-})
+});
+
+todoList.addEventListener('click',e => {
+    if (e.target.classList.contains('delete')){
+        e.target.parentElement.remove();
+    }
+});
