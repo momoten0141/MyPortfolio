@@ -4,7 +4,7 @@ const add = document.querySelector('.add');
 const todoList = document.querySelector('.todoList');
 
 function newTodo(todo){
-    todoList.innerHTML += `<li class ="todo"><p class="txt">${todo}</p><i class="delete far fa-trash-alt"></i></li>`;
+    todoList.innerHTML += `<li class ="todo"><p class="txt"><input type="checkbox" class="checkbox">${todo}</p><i class="delete visibility far fa-trash-alt"></i></li>`;
 }
 
 function getCookie(todo){
@@ -39,5 +39,17 @@ todoList.addEventListener('click',e => {
         const todo = e.target.parentElement.querySelector('.txt').textContent;
         deleteCookie(todo);
         e.target.parentElement.remove();
+    }
+
+    if (e.target.classList.contains('checkbox')){
+        const txt = e.target.parentElement;
+        const deleteBtn = e.target.parentElement.parentElement.querySelector('.delete');
+        if (txt.classList.contains('checked')){
+            txt.classList.remove('checked');
+            deleteBtn.classList.add('visibility');
+        }else{
+            txt.classList.add('checked');
+            deleteBtn.classList.remove('visibility');
+        }
     }
 });

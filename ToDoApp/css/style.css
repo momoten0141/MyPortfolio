@@ -64,8 +64,16 @@ body{
     background: rgba(203, 27, 69, 0.3);
 }
 
+.checked{
+    text-decoration: line-through;
+}
+
 .todoList .todo .txt{
     font-size: 30px;
+}
+
+.visibility{
+    visibility: hidden;
 }
 
 .todoList .todo .delete{
