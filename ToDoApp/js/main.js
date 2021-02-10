@@ -1,55 +1,42 @@
-'use strict';
-
-const add = document.querySelector('.add');
-const todoList = document.querySelector('.todoList');
-
-function newTodo(todo){
-    todoList.innerHTML += `<li class ="todo"><p class="txt"><input type="checkbox" class="checkbox">${todo}</p><i class="delete visibility far fa-trash-alt"></i></li>`;
+const newTodo = todo=>{
+    $('#todoList').prepend(`<li class="todo-item"><span class="todo"><input class="checkbox" type="checkbox"><span class="todo-txt">${todo}</span></span><span class="far fa-edit"></span></li>`);
 }
 
-function getCookie(todo){
-    newTodo(todo);
-}
-
-function setCookie(todo){
+const setCookie = todo=>{
     Cookies.set(todo, todo, { expires: 1/144 });
 }
 
-function deleteCookie(todo){
+const deleteCookie = todo=>{
     Cookies.remove(todo);
 }
 
-for (var todo in Cookies.get()) {
-    getCookie(todo);
+
+// 保存数分todoを生成
+for(let todo in Cookies.get()){
+    newTodo(todo);
 }
 
-add.addEventListener('submit',e => {
+// todoを入力した時の処理
+$('#addTodo').submit(e=>{
     e.preventDefault();
-
-    const todo = add.querySelector('.txt').value.trim();
-    if (todo.length) {
+    const todo = $.trim($('#enterTodo').val());
+    if(todo.length){
         setCookie(todo);
         newTodo(todo);
-        add.reset();
+        $('#addTodo')[0].reset();
     }
 });
 
-todoList.addEventListener('click',e => {
-    if (e.target.classList.contains('delete')){
-        const todo = e.target.parentElement.querySelector('.txt').textContent;
-        deleteCookie(todo);
-        e.target.parentElement.remove();
-    }
+// ゴミ箱アイコンをクリックした時の処理
+$(document).on('click','.fa-trash-alt',function(){
+    const todo = $(this).parent().find('.todo-txt').text();
+    deleteCookie(todo);
+    $(this).parent().remove();
+});
 
-    if (e.target.classList.contains('checkbox')){
-        const txt = e.target.parentElement;
-        const deleteBtn = e.target.parentElement.parentElement.querySelector('.delete');
-        if (txt.classList.contains('checked')){
-            txt.classList.remove('checked');
-            deleteBtn.classList.add('visibility');
-        }else{
-            txt.classList.add('checked');
-            deleteBtn.classList.remove('visibility');
-        }
-    }
+// チェックを入れた時の処理
+$(document).on('click','.checkbox',function(){
+    $(this).parents('.todo-item').find('.far').toggleClass('fa-trash-alt');
+    $(this).parents('.todo-item').find('.far').toggleClass('fa-edit');
+    $(this).parent().find('.todo-txt').toggleClass('line-through');
 });
