@@ -10,6 +10,8 @@ const deleteCookie = todo=>{
     Cookies.remove(todo);
 }
 
+let beforeCookie;
+
 
 // 保存数分todoを生成
 for(let todo in Cookies.get()){
@@ -34,7 +36,29 @@ $(document).on('click','.fa-trash-alt',function(){
     $(this).parent().remove();
 });
 
-// チェックを入れた時の処理
+// 編集アイコンをクリックした時の処理
+$(document).on('click','.fa-edit',function(){
+    const todo = $(this).parent().find('.todo-txt').text();
+    beforeCookie = todo;
+    $(this).toggleClass('fa-edit');
+    $(this).toggleClass('fa-check-circle');
+    $(this).parent().find('.todo').replaceWith(`<span class="todo todo-edit"><input class="todo-txt" type="text" value="${todo}"></span>`);
+});
+
+// 編集画面でチェックを入れた時の処理
+$(document).on('click','.fa-check-circle',function(){
+    const todo= $.trim($(this).parent().find('.todo-txt').val());
+    deleteCookie(beforeCookie);
+    setCookie(todo);
+    $(this).toggleClass('fa-edit');
+    $(this).toggleClass('fa-check-circle');
+    $(this).parent().find('.todo').replaceWith(`<span class="todo"><input class="checkbox" type="checkbox"><span class="todo-txt">${todo}</span></span>`);
+});
+
+
+
+
+// チェックボックスにチェックを入れた時の処理
 $(document).on('click','.checkbox',function(){
     $(this).parents('.todo-item').find('.far').toggleClass('fa-trash-alt');
     $(this).parents('.todo-item').find('.far').toggleClass('fa-edit');
