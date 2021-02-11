@@ -52,7 +52,12 @@ $(document).on('click','.fa-trash-alt',function(){
     // 全てのtodoを取得してクッキーセット
     const todoNum = $('#todoList > .todo-item').length;
     for(let i=1;i<=todoNum;i++){
-        const todo = $(`#todoList > .todo-item:nth-last-child(${i})`).text();
+        let todo;
+        if($(`#todoList > .todo-item:nth-last-child(${i})`).text()){
+            todo = $(`#todoList > .todo-item:nth-last-child(${i})`).text();
+        }else{
+            todo= $.trim($(`#todoList > .todo-item:nth-last-child(${i})`).find('.todo-txt').val());
+        }
         setCookie(i,todo);
     }
     // クッキーを基にtodoを再生成
