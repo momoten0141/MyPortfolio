@@ -1,0 +1,27 @@
+.p-sections{
+    width: 100%;
+
+    > .p-section:not(:first-of-type){
+        margin-top: 100px;
+    }
+}
+
+.p-section{
+    width: 100%;
+
+    &__title{
+        width: 100%;
+        font-size: 3.2rem;
+        font-weight: bold;
+        border-bottom: 2px solid #1c1c1c;
+        text-align: center;
+    }
+
+    &__body{
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+}

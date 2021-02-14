@@ -1,0 +1,11 @@
+.l-main{
+    width: 100%;
+    min-height: calc(100vh - 144px);
+
+    &__inner{
+        width: 66.666667%;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

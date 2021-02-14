@@ -1,0 +1,15 @@
+.p-footer{
+    color: $footer-color;
+    background-color: $footer-bg-color;
+
+    &__inner{
+        display: flex;
+        justify-content: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    &__copyright{
+        text-align: center;
+    }
+}

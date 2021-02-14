@@ -1,0 +1,52 @@
+.c-accordion{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1c1c1c;
+    border-radius: 5px;
+    
+    &__head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        margin: 0 10px;
+        position: relative;
+    }
+
+    &__title{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    &__body{
+        font-size: 16px;
+        display: none;
+
+        &__inner{
+            padding: 10px;
+        }
+    }
+
+    &__toggle{
+        position: absolute;
+        right: 0;
+        font-size: 20px;
+        font-weight: normal;
+        border: 1px solid #1c1c1c;
+        border-radius: 10px;
+        cursor: pointer;
+        padding-left: 5px;
+        padding-right: 5px;
+        user-select: none;
+    }
+
+    &-active{
+        > .c-accordion__head{
+            border-bottom: 1px solid #1c1c1c;
+        }
+
+        > .c-accordion__body{
+            display: inline;
+        }
+    }
+}

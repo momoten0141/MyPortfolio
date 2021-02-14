@@ -1,0 +1,11 @@
+.p-main{
+    background-color: $main-bg-color;
+    color: $main-color;
+
+    &__inner{
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}

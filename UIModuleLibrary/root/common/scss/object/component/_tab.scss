@@ -1,0 +1,56 @@
+.c-tabs{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1c1c1c;
+
+    &__head{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid  #1c1c1c;
+    }
+
+    &__body{
+        width: 100%;
+
+        &__inner{
+            width: 100%;
+            padding: 10px;
+        }
+    }
+
+    .c-tab:not(:last-of-type){
+        border-right: 2px solid #1c1c1c;
+    }
+}
+
+.c-tab{
+    width: 33.333333%;
+    padding: 10px;
+
+    &-active{
+        background-color: #1c1c1c;
+        color: #FCFAF2;
+    }
+
+    &__title{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    &__body{
+        width: 100%;
+        display: none;
+
+        &-active{
+            display: inline-block;
+        }
+    }
+}
