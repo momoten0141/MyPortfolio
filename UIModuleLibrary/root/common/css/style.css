@@ -468,6 +468,7 @@ template {
 html {
   font-size: 62.5%;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -704,9 +705,16 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -772,4 +780,42 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.p-anc {
+  width: 100%;
+  padding: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.p-anc__item {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  text-align: center;
+  padding: 10px;
+}
+
+.p-anc__link {
+  display: inline-block;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid #1c1c1c;
+  -webkit-box-shadow: 0 3px 0 #1c1c1c;
+          box-shadow: 0 3px 0 #1c1c1c;
+}
+
+.p-anc__link-active:active {
+  margin-top: 3px;
+  margin-bottom: -3px;
+  -webkit-box-shadow: 0 0 0 #1c1c1c;
+          box-shadow: 0 0 0 #1c1c1c;
 }
