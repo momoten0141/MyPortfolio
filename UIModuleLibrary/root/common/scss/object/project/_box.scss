@@ -1,0 +1,24 @@
+.p-box{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1c1c1c;
+    border-radius: 4px;
+
+    &__head{
+        width: 100%;
+        padding: 10px;
+        border-bottom: 2px dotted #1c1c1c;
+    }
+
+    &__title{
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__body{
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}

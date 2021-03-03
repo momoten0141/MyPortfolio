@@ -26,31 +26,31 @@
 }
 
 .c-tab{
-    width: 33.333333%;
+    width: 100%;
     padding: 10px;
-
-    &-active{
-        background-color: #1c1c1c;
-        color: #FCFAF2;
-    }
+    cursor: pointer;
+    user-select: none;
 
     &__title{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        text-align: center;
         font-size: 2rem;
         font-weight: bold;
-        cursor: pointer;
-        user-select: none;
     }
 
     &__body{
         width: 100%;
         display: none;
+    }
+}
 
-        &-active{
-            display: inline-block;
-        }
+.js-tab-active{
+    &.c-tab{
+        background-color: #1c1c1c;
+        color: #FCFAF2;
+    }
+
+    &.c-tab__body{
+        display: inline-block;
     }
 }
