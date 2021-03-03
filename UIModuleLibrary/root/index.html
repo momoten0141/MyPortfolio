@@ -16,6 +16,19 @@
     </header>
     <main class="l-main p-main">
         <div class="l-main__inner p-main__inner">
+            <dl class="p-box">
+                <dt class="p-box__head">
+                    <div class="p-box__title">
+                        <h2>共通申し送り</h2>
+                    </div>
+                </dt>
+                <dd class="p-box__body">
+                    <ul class="p-txtList">
+                        <li class="p-txtList__item">JSによって付与されるクラスは接頭辞[js-]を付ける事にしました。</li>
+                        <li class="p-txtList__item"></li>
+                    </ul>
+                </dd>
+            </dl>
             <ul class="p-anc">
                 <li class="p-anc__item"><a class="p-anc__link p-anc__link-active" href="#anc01">ANC01</a></li>
                 <li class="p-anc__item"><a class="p-anc__link p-anc__link-active" href="#anc02">ANC02</a></li>
@@ -56,7 +69,13 @@
                                             </div>
                                         </dt>
                                         <dd class="p-box__body">
-                                            <p>テキストテキストテキストテキスト</p>
+                                            <ul class="p-txtList">
+                                                <li class="p-txtList__item">クリックできる範囲を[c-accordion__head]に修正し、クリックしやすくしました。</li>
+                                                <li class="p-txtList__item">[slideToggle]に変更した為、コード量が半減しました。</li>
+                                                <li class="p-txtList__item">JSによって付与されるクラスを[js-accordion-active]に変更しました。</li>
+                                                <li class="p-txtList__item">[stop(true,false).slideToggle()]にして連続クリック後のアニメーションの継続を無くしました。</li>
+                                                <li class="p-txtList__item"></li>
+                                            </ul>
                                         </dd>
                                     </dl>
                                 </div>
@@ -84,7 +103,14 @@
                                             </div>
                                         </dt>
                                         <dd class="p-box__body">
-                                            <p>テキストテキストテキストテキスト</p>
+                                            <ul class="p-txtList">
+                                                <li class="p-txtList__item">クリックできる範囲を[c-accordion__head]に修正し、クリックしやすくしました。</li>
+                                                <li class="p-txtList__item">[slideToggle]に変更した為、コード量が半減しました。</li>
+                                                <li class="p-txtList__item">JSによって付与されるクラスを[js-accordion-active]に変更しました。</li>
+                                                <li class="p-txtList__item">初期値OPENの場合は、[js-accordion-active]を[c-accordion__head][c-accordion__body]に指定します。</li>
+                                                <li class="p-txtList__item">[stop(true,false).slideToggle()]にして連続クリック後のアニメーションの継続を無くしました。</li>
+                                                <li class="p-txtList__item"></li>
+                                            </ul>
                                         </dd>
                                     </dl>
                                 </div>
@@ -132,7 +158,12 @@
                                             </div>
                                         </dt>
                                         <dd class="p-box__body">
-                                            <p>あああああ</p>
+                                            <ul class="p-txtList">
+                                                <li class="p-txtList__item">[c-tab__title]ではなく、[c-tab]に[cursor:pointer;]を指定しました。</li>
+                                                <li class="p-txtList__item">JSによって付与されるクラスは接頭辞[js-]をつける事にしました。<br>タブでは[js-tab-active]が付与されます。</li>
+                                                <li class="p-txtList__item">[c-tab-active]と[c-tab__body-active]を[js-tab-active]に統一した事で、一括でクラスを削除することができるようになりました。コードを1行減らせました。</li>
+                                                <li class="p-txtList__item"></li>
+                                            </ul>
                                         </dd>
                                     </dl>
                                 </div>

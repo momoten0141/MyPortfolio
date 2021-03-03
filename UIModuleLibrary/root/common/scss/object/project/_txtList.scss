@@ -1,0 +1,11 @@
+.p-txtList{
+    position: relative;
+    left: 1.5em;
+    &__item{
+        list-style: circle outside;
+
+        &:not(:first-of-type){
+            margin-top: 8px;
+        }
+    }
+}
