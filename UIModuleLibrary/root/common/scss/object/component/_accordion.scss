@@ -18,7 +18,7 @@
         font-weight: bold;
         text-align: center;
         position: relative;
-        padding: 10px;
+        padding: 10px 50px 10px 10px;
 
         &::after{
             content: "\02795";
@@ -26,7 +26,7 @@
             color: #1c1c1c;
             position: absolute;
             right: 20px;
-            top: 6px;
+            top: calc(50% - 20px);
         }
     }
 
@@ -50,4 +50,8 @@
     &.c-accordion__body{
         display: inline;
     }
+}
+
+@media screen and (max-width: 767px){
+
 }

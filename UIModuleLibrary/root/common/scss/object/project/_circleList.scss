@@ -1,8 +1,10 @@
-.p-txtList{
+.p-circleList{
     position: relative;
     left: 1.5em;
+    margin-right: 1.5em;
     &__item{
         list-style: circle outside;
+        word-wrap: break-word;
 
         &:not(:first-of-type){
             margin-top: 8px;
