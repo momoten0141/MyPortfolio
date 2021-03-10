@@ -1,21 +1,33 @@
 .c-accordion{
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid #1c1c1c;
-    border-radius: 5px;
-    
+
     &__head{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 0;
-        margin: 0 10px;
-        position: relative;
+        border: 2px solid #1c1c1c;
+        border-radius: 4px;
+        cursor: pointer;
+        user-select: none;
+
+        &-hover:hover{
+            background-color: rgba($color: #1c1c1c, $alpha: 0.1);
+        }
     }
 
     &__title{
         font-size: 24px;
         font-weight: bold;
+        text-align: center;
+        position: relative;
+        padding: 10px 50px 10px 10px;
+
+        &::after{
+            content: "\02795";
+            font-size: 30px;
+            color: #1c1c1c;
+            position: absolute;
+            right: 20px;
+            top: calc(50% - 20px);
+        }
     }
 
     &__body{
@@ -24,29 +36,22 @@
 
         &__inner{
             padding: 10px;
+            border: 2px solid #1c1c1c;
+            border-radius: 4px;
         }
     }
+}
 
-    &__toggle{
-        position: absolute;
-        right: 0;
-        font-size: 20px;
-        font-weight: normal;
-        border: 1px solid #1c1c1c;
-        border-radius: 10px;
-        cursor: pointer;
-        padding-left: 5px;
-        padding-right: 5px;
-        user-select: none;
+.js-accordion-active{
+    > .c-accordion__title::after{
+        content: "\2796";
     }
-
-    &-active{
-        > .c-accordion__head{
-            border-bottom: 1px solid #1c1c1c;
-        }
-
-        > .c-accordion__body{
-            display: inline;
-        }
+    
+    &.c-accordion__body{
+        display: inline;
     }
+}
+
+@media screen and (max-width: 767px){
+
 }

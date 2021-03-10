@@ -7,7 +7,6 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         border-bottom: 2px solid  #1c1c1c;
     }
 
@@ -26,31 +25,50 @@
 }
 
 .c-tab{
-    width: 33.333333%;
+    width: 100%;
     padding: 10px;
-
-    &-active{
-        background-color: #1c1c1c;
-        color: #FCFAF2;
-    }
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
 
     &__title{
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        text-align: center;
         font-size: 2rem;
         font-weight: bold;
-        cursor: pointer;
-        user-select: none;
+        word-wrap: break-word;
     }
 
     &__body{
         width: 100%;
         display: none;
+    }
+}
 
-        &-active{
-            display: inline-block;
-        }
+.js-tab-active{
+    &.c-tab{
+        background-color: #1c1c1c;
+        color: #FCFAF2;
+    }
+
+    &.c-tab__body{
+        display: inline-block;
+    }
+}
+
+
+.c-tabs__col{
+    &2 > .c-tab{
+        width: 50%;
+    }
+    &3 > .c-tab{
+        width: 33.333334%;
+    }
+    &4 > .c-tab{
+        width: 25%;
+    }
+    &5 > .c-tab{
+        width: 20%;
     }
 }
