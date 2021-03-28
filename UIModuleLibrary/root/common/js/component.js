@@ -37,6 +37,73 @@ $('.c-tab').on('click',(e)=>{
     }
 });
 
+
+// ------------------------------------------
+// カルーセル
+// ------------------------------------------
+
+// C-01
+// ------------------------------------------
+const togglePagination = (carousel)=>{
+    const removeIndex = carousel.find('.js-carousel__pagination-active').index();
+    const addIndex = carousel.find('.js-carousel-active').index();
+    carousel.find('.c-carousel__pagination__item').eq(removeIndex).removeClass('js-carousel__pagination-active');
+    carousel.find('.c-carousel__pagination__item').eq(addIndex).addClass('js-carousel__pagination-active');
+}
+
+const prevSlide = (carousel)=>{
+    const activeSlide = carousel.find('.js-carousel-active');
+    const length = carousel.find('.c-carousel__item').length;
+    activeSlide.removeClass('js-carousel-active');
+    if(activeSlide.index() === 0){
+        carousel.find('.c-carousel__item').eq(length-1).addClass('js-carousel-active');
+    }else{
+        activeSlide.prev().addClass('js-carousel-active');
+    }
+}
+
+const nextSlide = (carousel)=>{
+    const activeSlide = carousel.find('.js-carousel-active');
+    const length = carousel.find('.c-carousel__item').length;
+    activeSlide.removeClass('js-carousel-active');
+    if(activeSlide.index() === length-1){
+        carousel.find('.c-carousel__item').eq(0).addClass('js-carousel-active');
+    }else{
+        activeSlide.next().addClass('js-carousel-active');
+    }
+}
+
+const autoSlide = ()=>{
+    const carouselNum = $('.c-carousel').length;
+    setTimeout(()=>{
+        for(let i=0; i<carouselNum; i++){
+            const carousel = $('.c-carousel').eq(i);
+            nextSlide(carousel);
+            togglePagination(carousel);
+        }
+        autoSlide();
+    },5000);
+}
+
+$('.c-carousel__prev').on('click',(e)=>{
+    const carousel = $(e.currentTarget).parents('.c-carousel');
+    prevSlide(carousel);
+    togglePagination(carousel);
+});
+
+$('.c-carousel__next').on('click',(e)=>{
+    const carousel = $(e.currentTarget).parents('.c-carousel');
+    nextSlide(carousel);
+    togglePagination(carousel);
+});
+
+autoSlide();
+
+
+
+
+
+
 // ------------------------------------------
 // アンカー処理
 // ------------------------------------------

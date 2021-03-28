@@ -658,6 +658,79 @@ img {
   width: 20%;
 }
 
+.c-carousel {
+  width: 100%;
+  padding: 0 50px;
+  position: relative;
+}
+
+.c-carousel__list {
+  width: 100%;
+}
+
+.c-carousel__item {
+  text-align: center;
+  display: none;
+}
+
+.c-carousel__btn {
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-carousel__prev {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.c-carousel__next {
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+
+.c-carousel__pagination {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.c-carousel__pagination__item {
+  width: 10%;
+  height: 10px;
+  margin: 2px;
+  background-color: rgba(28, 28, 28, 0.2);
+}
+
+.js-carousel-active {
+  display: block;
+}
+
+.js-carousel__pagination-active {
+  background-color: rgba(28, 28, 28, 0.6);
+}
+
 .p-header {
   background-color: #1C1C1C;
   color: #FCFAF2;

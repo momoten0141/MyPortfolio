@@ -1,0 +1,60 @@
+.c-carousel{
+    width: 100%;
+    padding: 0 50px;
+    position: relative;
+
+    &__list{
+        width: 100%;
+    }
+
+    &__item{
+        text-align: center;
+        display: none;
+    }
+
+    &__btn{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__prev{
+        font-size: 40px;
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        transform: translate(0, -50%);
+    }
+
+    &__next{
+        font-size: 40px;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+
+    &__pagination{
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+
+        &__item{
+            width: 10%;
+            height: 10px;
+            margin: 2px;
+            background-color: rgba($color: #1C1C1C, $alpha: 0.2);
+        }
+    }
+}
+
+.js-carousel-active{
+    display: block;
+}
+
+.js-carousel__pagination-active{
+    background-color: rgba($color: #1C1C1C, $alpha: 0.6);
+}
