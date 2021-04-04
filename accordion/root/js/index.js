@@ -1,0 +1,10 @@
+$('.acc1').myAcc({
+    toggleAcc:true,
+    toggleSpeed:'fast',
+});
+$('.acc2').myAcc({
+    toggleSpeed:'normal',
+});
+$('.acc3').myAcc({
+    toggleSpeed:'slow',
+});
