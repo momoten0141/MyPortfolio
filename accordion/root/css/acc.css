@@ -1,0 +1,52 @@
+.acc{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1c1c1c;
+    border-radius: 5px;
+}
+
+.acc-head{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.acc-head:hover{
+    background: rgba(28,28,28,0.1);
+}
+
+.acc-title{
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    padding-right: 30px;
+}
+
+.acc-title::after{
+    position: absolute;
+    right: 0px;
+    top: calc(50% - 22px);
+    content: "\02795";
+    font-size: 30px;
+    color: #1c1c1c;
+}
+
+.js-acc-active .acc-title::after{
+    content: "\2796";
+}
+
+.acc-collapse{
+    box-sizing: border-box;
+    display: none;
+}
+
+.acc-body{
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 2px solid #1c1c1c;
+    padding: 10px;
+    font-size: 16px;
+}
